@@ -27,3 +27,17 @@ cd xv6-public
 
 make qemu-nox
 ```
+
+* tinyemu
+
+```sh
+docker run -it --rm \
+-e DISPLAY=$DISPLAY \
+-v /tmp/.X11-unix:/tmp/.X11-unix \
+-v ~/TinyEMU:/home/ubuntu/TinyEMU \
+temu
+
+cd TinyEMU
+
+make
+```
