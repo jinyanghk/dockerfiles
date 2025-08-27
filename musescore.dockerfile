@@ -1,44 +1,45 @@
 FROM ubuntu:24.04
 
-RUN    apt update            \
-    && apt install -y        \
-       build-essential       \
-       git                   \
-       cmake                 \
-       libasound2-dev        \
-       portaudio19-dev       \
-       libmp3lame-dev        \
-       libsndfile1-dev       \
-       libportmidi-dev       \
-       libssl-dev            \
-       libpulse-dev          \
-       libfreetype6-dev      \
-       libfreetype6          \
-       libdrm-dev            \
-       libgl1-mesa-dev       \
-       libegl1-mesa-dev      \
-       qtbase5-dev           \
-       qttools5-dev          \
-       qttools5-dev-tools    \
-       qtwebengine5-dev      \
-       qtscript5-dev         \
+RUN    apt update             \
+    && apt install -y         \
+       build-essential        \
+       git                    \
+       cmake                  \
+       ninja-build            \
+       libasound2-dev         \
+       portaudio19-dev        \
+       libmp3lame-dev         \
+       libsndfile1-dev        \
+       libportmidi-dev        \
+       libssl-dev             \
+       libpulse-dev           \
+       libfreetype6-dev       \
+       libfreetype6           \
+       libdrm-dev             \
+       libgl1-mesa-dev        \
+       libegl1-mesa-dev       \
+       qtbase5-dev            \
+       qttools5-dev           \
+       qttools5-dev-tools     \
+       qtwebengine5-dev       \
+       qtscript5-dev          \
        libqt5xmlpatterns5-dev \
-       libqt5svg5-dev        \
-       libqt5webkit5-dev     \
-       qtbase5-private-dev   \
-       libqt5x11extras5-dev  \
-       qtdeclarative5-dev    \
+       libqt5svg5-dev         \
+       libqt5webkit5-dev      \
+       qtbase5-private-dev    \
+       libqt5x11extras5-dev   \
+       qtdeclarative5-dev     \
        qtquickcontrols2-5-dev \
-       qt6-base-dev          \
-       qt6-base-private-dev  \
-       qt6-networkauth-dev   \
-       qt6-declarative-dev   \
-       qt6-scxml-dev         \
-       qt6-svg-dev           \
-       qt6-tools-dev         \
-       qt6-5compat-dev       \
-       qml6-module-*         \
-       sudo                  \
+       qt6-base-dev           \
+       qt6-base-private-dev   \
+       qt6-networkauth-dev    \
+       qt6-declarative-dev    \
+       qt6-scxml-dev          \
+       qt6-svg-dev            \
+       qt6-tools-dev          \
+       qt6-5compat-dev        \
+       qml6-module-*          \
+       sudo                   \
     && rm -rf /var/cache/apt/archives /var/lib/apt/lists/*
 
 ARG USERNAME=ubuntu
