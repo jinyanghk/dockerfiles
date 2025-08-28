@@ -28,6 +28,24 @@ cd xv6-public
 make qemu-nox
 ```
 
+debug
+
+```sh
+cd xv6-gui
+make qemu-gdb
+```
+
+```sh
+docker ps # find container id
+docker exec -it container_id bash
+```
+
+```sh
+cd xv6-gui
+gdb -q kernel/kernel
+(gdb)target remote localhost:26000
+```
+
 * tinyemu
 
 ```sh
@@ -54,4 +72,8 @@ musescore
 cd MuseScore
 
 cmake -P build.cmake -DCMAKE_BUILD_TYPE=Release
+
+# or
+
+./ninja-build.sh
 ```
