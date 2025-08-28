@@ -4,6 +4,7 @@ RUN    apt update            \
     && apt install -y        \
        build-essential       \
        git                   \
+       gdb                   \
        qemu-system-i386      \
        sudo                  \
     && rm -rf /var/cache/apt/archives /var/lib/apt/lists/*
