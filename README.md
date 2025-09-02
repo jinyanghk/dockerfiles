@@ -77,3 +77,15 @@ cmake -P build.cmake -DCMAKE_BUILD_TYPE=Release
 
 ./ninja-build.sh
 ```
+
+* godot
+
+```sh
+docker run -it --rm \
+-e DISPLAY=$DISPLAY \
+-v /tmp/.X11-unix:/tmp/.X11-unix \
+-v ~/godot:/home/ubuntu/godot \
+godot
+
+scons platform=linuxbsd
+```
