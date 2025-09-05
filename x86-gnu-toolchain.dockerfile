@@ -3,9 +3,14 @@ FROM ubuntu:24.04
 RUN    apt update            \
     && apt install -y        \
        build-essential       \
+       autotools-dev         \
+       autoconf              \
+       cmake                 \
+       ninja-build           \
        git                   \
        gdb                   \
        qemu-system-i386      \
+       qemu-system-x86       \
        sudo                  \
     && rm -rf /var/cache/apt/archives /var/lib/apt/lists/*
 
