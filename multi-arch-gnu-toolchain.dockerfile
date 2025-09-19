@@ -10,11 +10,14 @@ RUN    apt update                   \
        git                          \
        gdb                          \
        gdb-multiarch                \
+       qemu-utils                   \ 
+       qemu-system-s390x            \
        qemu-system-misc             \
        qemu-system-arm              \
        qemu-system-i386             \
        qemu-system-x86              \
        qemu-system-loongarch64      \
+       gcc-s390x-linux-gnu          \
        gcc-13-loongarch64-linux-gnu \
        gcc-riscv64-linux-gnu        \
        gcc-arm-linux-gnueabi        \
