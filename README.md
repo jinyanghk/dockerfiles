@@ -11,7 +11,7 @@ riscv-gnu-toolchain
 
 cd xv6-riscv
 
-make qemu
+make qemu-nox
 ```
 
 * x86-gnu-toolchain
@@ -25,25 +25,7 @@ x86-gnu-toolchain
 
 cd xv6-public
 
-make qemu-nox
-```
-
-debug
-
-```sh
-cd xv6-gui
-make qemu-gdb
-```
-
-```sh
-docker ps # find container id
-docker exec -it container_id bash
-```
-
-```sh
-cd xv6-gui
-gdb -q kernel/kernel
-(gdb)target remote localhost:26000
+make qemu
 ```
 
 * tinyemu
@@ -102,3 +84,50 @@ cd jinix
 
 make qemu
 ```
+
+## debug
+
+```sh
+cd xv6
+make qemu-gdb
+```
+
+```sh
+docker ps # find container id
+docker exec -it container_id bash
+```
+
+```sh
+cd xv6
+gdb -q out/kernel.elf
+
+(gdb)b _start
+(gdb)target remote localhost:26000
+(gdb)c
+```
+
+### macro
+
+`macro expand`
+
+### register
+
+https://stackoverflow.com/questions/5429137/how-to-print-register-values-in-gdb
+
+* i r <register_name>: print a single register, e.g i r rax, i r eax
+* i r <register_name_1> <register_name_2> ...: print multiple registers, e.g i r rdi rsi,
+* i r: print all register except floating point & vector register (xmm, ymm, zmm).
+* i r a: print all register, include floating point & vector register (xmm, ymm, zmm).
+* i r f: print all FPU floating registers (st0-7 and a few other f*)
+Other register groups besides a (all) and f (float) can be found with:
+
+`maint print reggroups`
+
+as documented at: https://sourceware.org/gdb/onlinedocs/gdb/Registers.html
+
+Tips:
+
+* xmm0 ~ xmm15, are 128 bits, almost every modern machine has it, they are released in 1999.
+* ymm0 ~ ymm15, are 256 bits, new machine usually have it, they are released in 2011.
+* zmm0 ~ zmm31, are 512 bits, normal pc probably don't have it (as the year 2016), they are released in 2013, and mainly used in servers so far.
+* Only one serial of xmm / ymm / zmm will be shown, because they are the same registers in different mode. On my machine ymm is shown.
