@@ -29,6 +29,7 @@ RUN    apt update                   \
        gcc-aarch64-linux-gnu        \
        g++-aarch64-linux-gnu        \
        gcc-arm-none-eabi            \
+       gcc-multilib                 \
        binutils-riscv64-linux-gnu   \
        sudo                         \
     && rm -rf /var/cache/apt/archives /var/lib/apt/lists/*
