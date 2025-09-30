@@ -9,6 +9,8 @@ RUN    apt update                   \
        ninja-build                  \
        git                          \
        gdb                          \
+       xxd                          \
+       iproute2                     \
        gdb-multiarch                \
        qemu-utils                   \ 
        qemu-system-s390x            \
