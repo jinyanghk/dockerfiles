@@ -1,5 +1,19 @@
 # my docker files
 
+## multi-arch toolchain
+
+```sh
+docker run -it --rm --privileged \
+-e DISPLAY=$DISPLAY \
+-v /tmp/.X11-unix:/tmp/.X11-unix \
+-v ~/xv6-riscv:/home/ubuntu/xv6-riscv \
+multi-arch-gnu-toolchain
+
+cd xv6-riscv
+
+make qemu
+```
+
 * [riscv-gnu-toolchain](https://github.com/riscv-collab/riscv-gnu-toolchain)
 
 ```sh
