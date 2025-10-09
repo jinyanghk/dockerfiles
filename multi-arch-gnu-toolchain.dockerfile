@@ -1,5 +1,7 @@
 FROM ubuntu:24.04
 
+#COPY sources.list /etc/apt/sources.list
+
 RUN    apt update                   \
     && apt install -y               \
        build-essential              \
@@ -12,14 +14,12 @@ RUN    apt update                   \
        xxd                          \
        iproute2                     \
        gdb-multiarch                \
-       qemu-utils                   \ 
-       qemu-system-s390x            \
+       qemu-utils                   \
        qemu-system-misc             \
        qemu-system-arm              \
        qemu-system-i386             \
        qemu-system-x86              \
        qemu-system-loongarch64      \
-       gcc-s390x-linux-gnu          \
        gcc-13-loongarch64-linux-gnu \
        gcc-riscv64-linux-gnu        \
        gcc-arm-linux-gnueabi        \
