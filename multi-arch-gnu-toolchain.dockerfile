@@ -1,7 +1,5 @@
 FROM ubuntu:24.04
 
-#COPY sources.list /etc/apt/sources.list
-
 RUN    apt update                   \
     && apt install -y               \
        build-essential              \
@@ -11,10 +9,7 @@ RUN    apt update                   \
        ninja-build                  \
        git                          \
        gdb                          \
-       xxd                          \
-       iproute2                     \
        gdb-multiarch                \
-       qemu-utils                   \
        qemu-system-misc             \
        qemu-system-arm              \
        qemu-system-i386             \
@@ -29,7 +24,6 @@ RUN    apt update                   \
        gcc-aarch64-linux-gnu        \
        g++-aarch64-linux-gnu        \
        gcc-arm-none-eabi            \
-       gcc-multilib                 \
        binutils-riscv64-linux-gnu   \
        sudo                         \
     && rm -rf /var/cache/apt/archives /var/lib/apt/lists/*

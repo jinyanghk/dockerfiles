@@ -145,3 +145,17 @@ Tips:
 * ymm0 ~ ymm15, are 256 bits, new machine usually have it, they are released in 2011.
 * zmm0 ~ zmm31, are 512 bits, normal pc probably don't have it (as the year 2016), they are released in 2013, and mainly used in servers so far.
 * Only one serial of xmm / ymm / zmm will be shown, because they are the same registers in different mode. On my machine ymm is shown.
+
+## dockerfile links:
+
+https://github.com/puppeteer/puppeteer/tree/main/docker
+
+## quantlab
+
+```
+docker run -it --rm --net=host \
+-v ~/lab:/home/ubuntu/lab
+quantlab
+
+jupyter lab --no-browser --ip=0.0.0.0 --port=8888 --NotebookApp.token='' --NotebookApp.password=''
+```

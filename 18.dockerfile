@@ -16,6 +16,7 @@ RUN    apt update            \
        iproute2              \
        zlib1g-dev            \
        qemu-system-i386      \
+       qemu-system-x86       \
        sudo                  \
     && rm -rf /var/cache/apt/archives /var/lib/apt/lists/*
 
