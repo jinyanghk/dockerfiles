@@ -148,14 +148,14 @@ Tips:
 
 ## dockerfile links:
 
+https://github.com/jupyter/docker-stacks
+
 https://github.com/puppeteer/puppeteer/tree/main/docker
 
-## quantlab
+https://github.com/rocker-org/rocker/blob/master/r-ubuntu/bionic/Dockerfile
 
-```
-docker run -it --rm --net=host \
--v ~/lab:/home/ubuntu/lab
-quantlab
+## rstudio
 
-jupyter lab --no-browser --ip=0.0.0.0 --port=8888 --NotebookApp.token='' --NotebookApp.password=''
+```sh
+docker run --rm -ti -e PASSWORD=yourpassword -p 8787:8787 rocker/rstudio
 ```

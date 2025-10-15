@@ -35,6 +35,12 @@ RUN npm install -g puppeteer && \
     echo export NODE_PATH=/usr/lib/node_modules >> ~/.bashrc && \
     npm cache clean --force
 
+RUN wget -O opend.tar.gz https://www.futunn.com/download/fetch-lasted-link?name=opend-ubuntu && \
+    tar -xvf opend.tar.gz && \
+    rm opend.tar.gz && \
+    mv Futu_OpenD_*/Futu_OpenD_* Futu_OpenD && \
+    mv Futu_OpenD /opt
+
 
 ARG USERNAME=ubuntu
 ARG USER_UID=1000
@@ -61,13 +67,17 @@ RUN cd ~ && \
                     pandas        \
                     jupysql       \
                     duckdb-engine \
+                    polars        \
+                    pyarrow       \
                     matplotlib    \
                     yfinance      \
                     yahoo_fin     \
                     jupyterlab    \
                     jupyter       \
                     metakernel    \
-                    selenium   && \
+                    vectorbt      \
+                    backtesting   \
+                    futu-api   && \
     ~/.venv/bin/python3 -c "import duckdb;duckdb.query('install httpfs;');duckdb.query('install json;')" && \
     ~/.venv/bin/pip cache purge && \
     echo export NODE_PATH=/usr/lib/node_modules >> ~/.bashrc && \
